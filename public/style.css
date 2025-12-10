@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+.fronttttttttt {
+    font-family: "Poppins", sans-serif;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 66px;
+    width: 100%;
+    padding: 0 16px;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo div{
+    height: 45px;
+    width: 45px;
+    background-image: url("/images/talkifyLogo1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.logo h1 {
+    color: red;
+    font-size: 2rem;
+    font-family: "Viga", sans-serif;
+}
+
+.navBtn {
+    height: 45px;
+    width: 210px;
+    padding: 0 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBtn .home a{
+    color: red;
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 7px;
+}
+
+.navBtn .accout {
+    color: white;
+    text-align: center;
+    background-color: red;
+    height: 35px;
+    width: 125px;
+    border-radius: 12px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.hero-section {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    z-index: -1;
+    height: 480px;
+    width: 100vw;
+    background-image: url("/images/talkify-showImg.jpg");
+    background-size: contain;
+    color: white;
+    text-align: center;
+}
+
+.hero-section div h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 130px;
+    padding-top: 110px;
+}
+
+.hero-section div p {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.create-post {
+    position: relative;
+    height: 70px;
+    width: 95vw;
+    padding: 0 15px;
+    margin: calc(66px + 480px + 20px) auto 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 0 5px grey;
+    background-color: white;
+}
+
+.create-post .word-item {
+    color: red;
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.create-post .post-btn {
+    height: 50px;
+    width: 120px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 15px;
+    background-color: red;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+
+/*talkiys*/
+.container {
+    width: 100%;
+    margin: 16px auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #fff ;
+}
+
+
+ .card {
+    width: 700px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    border-radius: 25px;
+    box-shadow: 0 0 5px gray;
+    overflow: hidden;
+}
+
+ .card .username {
+    height: 50px;
+    font-size: 20px;
+    padding: 12px 25px;
+}
+
+ .card .username i {
+    margin-right: 5px;
+}
+
+
+/*.position: relative = “I’m the parent you’ll follow.”
+.position: absolute (inside it) = “I’ll follow my nearest relative parent.”*/
+
+.card .img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+
+.frame {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+  width: 100%;
+  height: 400px;   
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: grey;
+  cursor: pointer;
+  z-index: 5;
+}
+
+
+.arrow:hover {
+  color: rgb(205, 199, 199);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.card .heading {
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 16px 25px;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+.card .talk {
+    height: 45px;
+    font-size: 1.2rem;
+    padding: 0 25px;
+    overflow: hidden;
+}
+
+.card .talkBack {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 5px 55px;
+
+}
+
+.talkBack .like {
+    font-size: 1rem;
+    cursor: pointer;
+    transform-origin: all 0.3s;
+}
+
+.active {
+    color: red;
+    transform: scale(1.2);
+}
+.card .talkBack button {
+    height: 32px;
+    width: 70px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: red;
+    margin: 0 0px 0 25px;
+    cursor: pointer;
+}
+
+.card .talkBack button:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+/* ============================
+    MOBILE RESPONSIVE (≤ 576px)
+   ============================ */
+@media (max-width: 576px) {
+
+    /* NAVBAR */
+    .nav {
+        height: 65px;
+        padding: 0 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo div {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navBtn {
+        width: 140px;
+        height: 38px;
+        padding: 0 6px;
+    }
+
+    .navBtn .accout {
+        width: 90px;
+        font-size: 14px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .navBtn .home a {
+        font-size: 18px;
+        margin-left: 2px;
+    }
+
+
+    /* HERO SECTION */
+    .hero-section {
+        height: 270px;
+        background-size: cover;
+    }
+
+    .hero-section div h1 {
+        font-size: 48px;
+        padding-top: 80px;
+    }
+
+    .hero-section div p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+
+    /* CREATE POST SECTION */
+    .create-post {
+        width: 95%;
+        height: auto;
+        padding: 7px;
+        margin: calc(60px + 280px + 15px) auto 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .create-post .word-item {
+        font-size: 16px;
+        margin: 0;
+        padding: 0 5px;
+    }
+
+    .create-post .post-btn {
+        width: 100%;
+        max-width: 180px;
+        height: 45px;
+        font-size: 18px;
+        
+    }
+
+
+    /* POSTS CONTAINER */
+    .container {
+        padding: 8px;
+        gap: 20px;
+    }
+
+    /* CARD */
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card .username {
+        height: 50px;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .card .img {
+        height: 250px;
+    }
+
+    .slider img {
+        height: 250px;
+    }
+
+    .arrow {
+        font-size: 28px;
+    }
+
+    .card .heading {
+        font-size: 18px;
+        padding: 12px 15px;
+    }
+
+    .card .talk {
+        height: auto;
+        font-size: 1rem;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+
+    .card .talkBack {
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .card .talkBack button {
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+

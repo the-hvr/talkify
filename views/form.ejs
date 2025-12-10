@@ -1,0 +1,41 @@
+<!--starter code-->
+<%- include("partials/starter.ejs"); %>
+
+<!--hero section-->
+    <div class="hero-section">
+        <div>
+            <h1>Talkify</h1>
+            <p>“Let’s Talk — because every voice deserves to be heard.”</p>
+        </div>
+    </div>
+
+<!--form for upload new talkify-->
+<div class="form-container">
+    <h2>Let's start a new talkify.</h2>
+    <div>
+        <form action="/talkify" method="post" enctype="multipart/form-data">
+            <div class="form-box">
+                <div class="file-input">
+                    <label for="images" id="file-label"><div class="img-box"></div></label>
+                    <input type="file" id="images" name="images" multiple required>
+                </div>
+                <div class="text-input">
+                    <input type="text" name="username" id="username" placeholder="username. . ." required >
+                    <br>
+                    <input type="text" name="heading" placeholder="heading . . ." required>
+                    <br>  
+                    <textarea name="talk" id="talk" placeholder="talk here," required></textarea>
+                </div>
+            </div>
+            <div class="form-btn">
+                <button type="reset" class="clear"><i class="fa-solid fa-rotate-right"></i></button>
+                <button type="submit" class="submit">POST NOW</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--footer code-->
+<%- include("partials/footer.ejs"); %>
+  

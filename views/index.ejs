@@ -1,0 +1,71 @@
+<!--starter code-->
+<%- include("partials/starter.ejs"); %>
+
+    <!--hero section-->
+    <div class="hero-section">
+        <div>
+            <h1>Talkify</h1>
+            <p>“Let’s Talk — because every voice deserves to be heard.”</p>
+        </div>
+    </div>
+
+    <!--Create Post Section-->
+    <div class="create-post">
+        <div class="word-item">Think</div>
+        <div class="word-item">Type</div>
+        <div class="word-item">Talk</div>
+        <div class="word-item">Transform</div>
+        <a href="http://localhost:8080/talkify/new">
+            <button class="post-btn" type="button">Talk Now</button>
+        </a>
+        
+    </div>
+
+    <hr>
+
+    <!--talkiys section-->
+    <div class="container">
+        <%  if( talkifys.length > 0) {  %>
+        <% talkifys.forEach(post => { %>
+
+        <div class="card">
+            <h2 class="username"><i class="fa-solid fa-user"></i><%= post.username %></h2>
+            <div class="img">
+                <div class="arrow left"><i class="fa-solid fa-chevron-left"></i></div>
+                <div class="frame">
+                    <div class="slider">
+                        <% post.images.forEach(image=> { %>
+                            <img src="<%=
+                                 image.startsWith('http') 
+                                 ? image                       // case 1: full internet URL
+                                 : image.startsWith('/images/') 
+                                 ? image                   // case 2: old local images
+                                 : '/uploads/' + image     // case 3: multer uploads
+                                %>" alt="img">
+                            <% }); %>
+                    </div>
+                </div>
+                <div class="arrow right"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="heading">
+                <i class="fa-solid fa-tag"></i><%= post.heading %>
+            </div>
+            <div class="talk"><%= post.talk %></div>
+            <div class="talkBack">
+                <div class="like">
+                    <i class="fa-regular fa-heart"></i>
+                    <span><%= post.likes %></span>
+                </div>
+                <a href="http://localhost:8080/talkify/<%= post.id %>">
+                    <button>Talk Now</button>
+                </a>
+            </div>
+        </div>
+        <% }); %>
+    <%  } %>
+    </div>
+
+    
+
+<!--footer code-->
+<%- include("partials/footer.ejs"); %>

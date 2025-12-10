@@ -1,0 +1,90 @@
+<!--starter code-->
+<%- include("partials/starter.ejs"); %>
+
+<!--hero section-->
+    <div class="hero-section">
+        <div>
+            <h1>Talkify</h1>
+            <p>“Let’s Talk — because every voice deserves to be heard.”</p>
+        </div>
+    </div>
+
+<div class="viewContainer">
+    <!--talkiy section-->
+
+    <div class="inner-container"> 
+        <div class="card viewCard"><!--post-->
+            <h2 class="username"><i class="fa-solid fa-user"></i></i><%= post.username %></h2>
+            <div class="img">
+                <div class="arrow left"><i class="fa-solid fa-chevron-left"></i></div>
+                <div class="frame">
+                    <div class="slider">
+                        <% post.images.forEach(image=> { %>
+                            <img src="<%=
+                                 image.startsWith('http') 
+                                 ? image                       // case 1: full internet URL
+                                 : image.startsWith('/images/') 
+                                 ? image                   // case 2: old local images
+                                 : '/uploads/' + image     // case 3: multer uploads
+                                %>" alt="img">
+                            <% }); %>
+                    </div>
+                </div>
+                <div class="arrow right"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="heading">
+                <i class="fa-solid fa-tag"></i><%= post.heading %>
+            </div>
+            <div class="talk talkView"><%= post.talk %></div>
+            <div class="talkBack">
+                <div class="like">
+                    <i class="fa-regular fa-heart"></i>
+                    <span><%= post.likes %></span>
+                </div>
+            </div>
+        </div>
+
+        <!--comment section-->
+        <div class="comments">
+            <div class="comment-form">
+                <h2>let's start discussion:</h2>
+                <form action="http://localhost:8080/talkify/<%= post.id %>/comments" method="post">
+                    <input type="text" name="username" id="username" placeholder="@username">
+                    <textarea name="comment" id="comment" placeholder="share your thought on this post"></textarea>
+                    <div class="comment-btn">
+                        <button type="reset" class="clear"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button type="submit" class="postbtn">Comment</button>
+                    </div>
+                </form>
+            </div>
+            <div class="comment-box">
+                <h3>other comments:</h3>
+                <% if (post.comments && post.comments.length > 0){ %>
+                    <% post.comments.forEach((c) => { %>
+                        <div class="comment">
+                        <div class="userid">
+                            <div><i class="fa-solid fa-user"></i><%= c.username %></div>
+                            <!-- DELETE COMMENT FORM -->
+                            <div><form action="/talkify/<%= post.id %>/comments/<%= c.id %>?_method=DELETE" method="post">
+                                    <button><i class="fa-solid fa-xmark crossBtn"></i></button>
+                                </form>
+                            </div> 
+                        </div>
+                        <div class="content"><%= c.comment %></div>
+                </div> 
+                    <% }) %>
+                <% } else { %>
+                    <p>no comments, be the first!</p>
+                <% } %>
+
+                 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--footer code-->
+<%- include("partials/footer.ejs"); %>
+
