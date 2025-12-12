@@ -204,8 +204,8 @@ textarea:focus {
 
     /* Image Box */
     .file-input .img-box {
-        width: 375px;
-        height: 230px;
+        width: 285px;
+        height: 220px;
         border-radius: 20px;
         background-size: cover;
         background-color: #f8f8f8;

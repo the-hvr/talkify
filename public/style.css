@@ -282,9 +282,7 @@ body {
 
 
 
-/* ============================
-    MOBILE RESPONSIVE (≤ 576px)
-   ============================ */
+/*  MOBILE RESPONSIVE (≤ 576px) */
 @media (max-width: 576px) {
 
     /* NAVBAR */
@@ -312,7 +310,7 @@ body {
         width: 90px;
         font-size: 14px;
         height: 30px;
-        padding: 5px;
+        padding: 7px;
     }
 
     .navBtn .home a {
