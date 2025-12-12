@@ -3,7 +3,7 @@ const express = require("express");
 const { url } = require("inspector");
 const app = express();
 const path = require("path");
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const {v4 : uuidv4} = require(`uuid`);
 const methodOverride = require('method-override');
@@ -47,6 +47,10 @@ const upload = multer({ storage });
 
 // ----  serve uploaded images at /uploads ---- 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+app.get("/", (req, res) => {
+  res.redirect("/talkify");
+});
 
 //home route
 app.get("/talkify", (req, res) => {
