@@ -48,7 +48,7 @@
         <div class="comments">
             <div class="comment-form">
                 <h2>let's start discussion:</h2>
-                <form action="http://localhost:8080/talkify/<%= post.id %>/comments" method="post">
+                <form action="/talkify/<%= post.id %>/comments" method="post">
                     <input type="text" name="username" id="username" placeholder="@username">
                     <textarea name="comment" id="comment" placeholder="share your thought on this post"></textarea>
                     <div class="comment-btn">
