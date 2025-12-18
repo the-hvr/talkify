@@ -8,6 +8,7 @@ A modern full-stack web application built with Node.js and Express, focused on p
 - [About](#about)
 - [Features](#features)
 - [Tech Stack & Usage](#tech-stack--usage)
+- [Future Enhancements](#Future-Enhancements)
 - [Installation](#installation)
 - [API Endpoints](#api-endpoints)
 - [Usage](#usage)
